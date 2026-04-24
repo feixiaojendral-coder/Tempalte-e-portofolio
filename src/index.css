@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #2530f5;
+  --color-brand-deep: #151c9b;
+  --color-accent: #cbff9c;
+  --color-accent-strong: #8effe7;
+  
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  
+  --radius-xl: 32px;
+}
+
+@layer base {
+  :root {
+    --bg: #2530f5;
+    --bg-deep: #151c9b;
+    --bg-night: #0c105c;
+    --text: #f7f8ff;
+    --muted: #d2d6ff;
+  }
+
+  body {
+    @apply m-0 font-display text-[#f7f8ff] min-h-screen overflow-x-hidden bg-[#0c105c];
+    background:
+      radial-gradient(circle at 10% 20%, rgba(142, 255, 231, 0.16), transparent 20rem),
+      radial-gradient(circle at 90% 15%, rgba(203, 255, 156, 0.18), transparent 22rem),
+      linear-gradient(135deg, #0c105c 0%, #2530f5 34%, #3041ff 60%, #151c9b 100%);
+  }
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 60px rgba(8, 10, 56, 0.28);
+}
+
+.page-grid {
+  @apply fixed inset-0 pointer-events-none opacity-50 z-0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(203, 255, 156, 0.035) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(203, 255, 156, 0.035) 2px, transparent 2px);
+  background-size: 56px 56px, 56px 56px, 224px 224px, 224px 224px;
+}
+
+.section-kicker {
+  @apply font-mono text-[0.84rem] text-white/80 uppercase tracking-widest;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center min-w-[170px] px-6 py-4 rounded-full font-bold text-[#101751] bg-accent shadow-[0_18px_36px_rgba(203,255,156,0.22)] transition-all hover:-translate-y-1;
+}
+
+.button-ghost {
+  @apply inline-flex items-center justify-center min-w-[170px] px-6 py-4 rounded-full font-bold text-white bg-white/10 border border-white/20 transition-all hover:-translate-y-1;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
